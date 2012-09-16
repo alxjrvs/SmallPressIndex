@@ -1,0 +1,9 @@
+= simple_form_for @book, :html => { :class => 'form-horizontal' } do |f|
+  = f.input :name
+  = f.input :image
+  = f.input :author_name
+  = f.input :author_url
+  = f.input :description
+  .form-actions
+    = f.button :submit, :class => 'btn-primary'
+    = link_to t('.cancel', :default => t("helpers.links.cancel")), book_path, :class => 'btn'
