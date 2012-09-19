@@ -1,10 +1,4 @@
 SmallPressIndex::Application.routes.draw do
-  resources :tag_relations
-
-  resources :tags
-
-  resources :books
-
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
