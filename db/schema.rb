@@ -32,6 +32,8 @@ ActiveRecord::Schema.define(:version => 20120923025417) do
     t.integer "tag_id"
   end
 
+  add_index "book_tags", ["book_id", "tag_id"], :name => "index_book_tags_on_book_id_and_tag_id"
+
   create_table "books", :force => true do |t|
     t.string   "name"
     t.text     "description"
