@@ -13,10 +13,11 @@ describe Book do
     it "without a description" do
         expect(FactoryGirl.build :book, name: nil).to_not be_valid
     end
-    it "with two identical entries (name and author)"
-      author = FactoryGirl.create :author
-      book1 = FactoryGirl.create :book, name: "Ajar", author: author
-      expect(FactoryGirl.build :book, name: "Ajar", author: author)
   end
-  it "is invalid without an author "
+  it "shows the right authors" do
+    b = FactoryGirl.create :book
+    a = FactoryGirl.create :author  
+    b.authors << a
+    expect(b.authors).to eq([a])
+  end
 end
