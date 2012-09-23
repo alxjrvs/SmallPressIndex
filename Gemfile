@@ -1,23 +1,30 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.5'
+gem 'rails', '3.2.8'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'pry-rails', :group => :development
+group :development do
+  gem 'pry-rails'
+end
 
 group :development, :test do
   gem 'sqlite3'
   gem 'rspec-rails'
-  gem 'rspec'
   gem 'rspec-pride'
   gem 'factory_girl_rails'
   gem 'factory_girl_rspec', :git => "https://github.com/chendrix/factory_girl_rspec.git"
   gem 'rspec-subject-extensions'
   gem 'guard-rails'
-  gem 'capybara'
   gem "random-word"
+end
+
+group :test do
+  gem 'faker', "~> 1.0.1"
+  gem 'database_cleaner', "~> 0.7.2"
+  gem 'capybara', "~> 1.1.2"
+  gem 'launchy', "~> 2.1.0"
 end
 
 group :production do
@@ -25,11 +32,8 @@ group :production do
   gem 'sendgrid'
 end
 
-gem 'bluecloth', '>= 2.0.0'
-gem 'devise'
 gem 'heroku'
 gem 'haml-rails'
-gem 'hpricot'
 gem 'ruby_parser'
 gem 'pry'
 gem 'simple_form'
