@@ -1,5 +1,5 @@
 class Book < ActiveRecord::Base
-  attr_accessor :name, :description
+  attr_accessible :name, :description
   has_many :book_tags
   has_many :tags, :through => :book_tags
   has_many :author_books
